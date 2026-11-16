@@ -12,6 +12,11 @@ class Admin extends Authenticatable
 
     protected $guarded = [];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
     public function getNameAttribute()
     {
         return trim(($this->title ?? '') . ' ' . ($this->first_name ?? '') . ' ' . ($this->last_name ?? ''));
